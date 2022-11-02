@@ -2,6 +2,9 @@
   "name": "@distinction-dev/backend-package-name",
   "version": "0.0.0-development",
   "description": "Template repository for us to use to create TS based backend packages",
+  "engines": {
+    "node": "14"
+  },
   "scripts": {
     "clean": "rm -rf ./lib/",
     "build": "npm run clean && npm run build:esm && npm run build:cjs",
@@ -79,5 +82,10 @@
     "branches": [
       "main"
     ]
+  },
+  "dependencies": {
+    "@types/split2": "^3.2.1",
+    "ndjson": "^2.0.0",
+    "split2": "^4.1.0"
   }
 }
