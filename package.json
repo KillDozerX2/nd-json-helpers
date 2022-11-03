@@ -1,5 +1,5 @@
 {
-  "name": "@distinction-dev/backend-package-name",
+  "name": "@distinction-dev/ndjson-helpers",
   "version": "0.0.0-development",
   "description": "Template repository for us to use to create TS based backend packages",
   "engines": {
@@ -35,7 +35,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/distinction-dev/package-name.git"
+    "url": "git+https://github.com/distinction-dev/ndjson-helpers.git"
   },
   "license": "MIT",
   "author": {
@@ -49,9 +49,9 @@
     "typescript"
   ],
   "bugs": {
-    "url": "https://github.com/distinction-dev/package-name/issues"
+    "url": "https://github.com/distinction-dev/ndjson-helpers/issues"
   },
-  "homepage": "https://github.com/distinction-dev/package-name#readme",
+  "homepage": "https://github.com/distinction-dev/ndjson-helpers#readme",
   "devDependencies": {
     "@types/node": "^12.20.11",
     "@typescript-eslint/eslint-plugin": "^4.22.0",
