@@ -3,7 +3,7 @@
   "version": "0.0.0-development",
   "description": "Template repository for us to use to create TS based backend packages",
   "engines": {
-    "node": "14"
+    "node": ">=14"
   },
   "scripts": {
     "clean": "rm -rf ./lib/",
