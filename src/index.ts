@@ -1,12 +1,22 @@
 import { createReadStream, PathLike } from "fs";
 import split from "split2";
 import { PassThrough, Readable } from "stream";
+import {
+  constants,
   // createBrotliDecompress,
+  createGunzip,
+  createUnzip,
+  ZlibOptions
+} from "zlib";
 
 type ParseNdJsonOption<T> = {
   parserFunction?: (data: T[], line: string) => T;
   reviver?: (key: string, value: any) => any;
   compressionAlgo?: "zip" | "gzip" | "brotli";
+};
+
+const SHARED_ZLIB_OPTIONS: ZlibOptions = {
+  finishFlush: constants.Z_SYNC_FLUSH
 };
 
 export const parseNdJsonStream = <T = any>(
@@ -21,9 +31,9 @@ export const parseNdJsonStream = <T = any>(
         (() => {
           switch (options?.compressionAlgo) {
             case "zip":
-              return createUnzip();
+              return createUnzip(SHARED_ZLIB_OPTIONS);
             case "gzip":
-              return createGunzip();
+              return createGunzip(SHARED_ZLIB_OPTIONS);
             // case "brotli":
             //   return createBrotliDecompress();
             default:
