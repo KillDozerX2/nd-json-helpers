@@ -1,7 +1,7 @@
 import { createReadStream, PathLike } from "fs";
 import split from "split2";
 import { PassThrough, Readable } from "stream";
-import { createBrotliDecompress, createGunzip, createUnzip } from "zlib";
+  // createBrotliDecompress,
 
 type ParseNdJsonOption<T> = {
   parserFunction?: (data: T[], line: string) => T;
@@ -24,8 +24,8 @@ export const parseNdJsonStream = <T = any>(
               return createUnzip();
             case "gzip":
               return createGunzip();
-            case "brotli":
-              return createBrotliDecompress();
+            // case "brotli":
+            //   return createBrotliDecompress();
             default:
               return new PassThrough();
           }

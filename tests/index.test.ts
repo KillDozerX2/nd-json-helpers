@@ -19,14 +19,4 @@ describe("File Parse NdJson Files", () => {
     assert.isArray(data);
     expect(data.length).to.equal(100);
   });
-  it("Will successfully parse Brotli file", async () => {
-    const data = await parseNdJsonFromFile(
-      path.join(__dirname, "data.ndjson.br"),
-      {
-        compressionAlgo: "brotli",
-      }
-    );
-    assert.isArray(data);
-    expect(data.length).to.equal(100);
-  });
 });
