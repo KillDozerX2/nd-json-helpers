@@ -92,5 +92,8 @@
     "@types/split2": "^3.2.1",
     "ndjson": "^2.0.0",
     "split2": "^4.1.0"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
