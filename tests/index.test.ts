@@ -1,11 +1,32 @@
-import { expect } from "chai";
+import { assert, expect } from "chai";
 import "mocha";
+import * as path from "path";
+import { parseNdJsonFromFile } from "../src/index";
 
-describe("Fake Test", () => {
-  it("Will Pass", () => {
-    expect(1).to.equal(2);
+describe("File Parse NdJson Files", () => {
+  it("Will successfully parse File stream", async () => {
+    const data = await parseNdJsonFromFile(path.join(__dirname, "data.ndjson"));
+    assert.isArray(data);
+    expect(data.length).to.equal(100);
   });
-  it("Will Fail", () => {
-    expect(1).to.equal(1);
+  it("Will successfully parse GZip file", async () => {
+    const data = await parseNdJsonFromFile(
+      path.join(__dirname, "data.ndjson.gz"),
+      {
+        compressionAlgo: "gzip",
+      }
+    );
+    assert.isArray(data);
+    expect(data.length).to.equal(100);
+  });
+  it("Will successfully parse Brotli file", async () => {
+    const data = await parseNdJsonFromFile(
+      path.join(__dirname, "data.ndjson.br"),
+      {
+        compressionAlgo: "brotli",
+      }
+    );
+    assert.isArray(data);
+    expect(data.length).to.equal(100);
   });
 });
