@@ -13,7 +13,7 @@ describe("File Parse NdJson Files", () => {
     const data = await parseNdJsonFromFile(
       path.join(__dirname, "data.ndjson.gz"),
       {
-        compressionAlgo: "gzip",
+        compressionAlgo: "gzip"
       }
     );
     assert.isArray(data);
