@@ -44,7 +44,7 @@ export const parseNdJson = <T = any>(
   });
 };
 
-export const parseNdJsonFormFile = <T = any>(
+export const parseNdJsonFromFile = <T = any>(
   filename: PathLike,
   options?: ParseNdJsonOption<T>
 ): Promise<T[]> => {
