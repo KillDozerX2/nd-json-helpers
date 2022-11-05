@@ -1,7 +1,7 @@
-import { PassThrough, Readable } from "stream";
-import { createGunzip, createUnzip, createBrotliDecompress } from "zlib";
-import split from "split2";
 import { createReadStream, PathLike } from "fs";
+import split from "split2";
+import { PassThrough, Readable } from "stream";
+import { createBrotliDecompress, createGunzip, createUnzip } from "zlib";
 
 type ParseNdJsonOption<T> = {
   parserFunction?: (data: T[], line: string) => T;
