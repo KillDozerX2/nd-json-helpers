@@ -9,7 +9,7 @@ type ParseNdJsonOption<T> = {
   compressionAlgo?: "zip" | "gzip" | "brotli";
 };
 
-export const parseNdJson = <T = any>(
+export const parseNdJsonStream = <T = any>(
   stream: Readable,
   options?: ParseNdJsonOption<T>
 ): Promise<T[]> => {
@@ -48,5 +48,5 @@ export const parseNdJsonFromFile = <T = any>(
   filename: PathLike,
   options?: ParseNdJsonOption<T>
 ): Promise<T[]> => {
-  return parseNdJson<T>(createReadStream(filename), options);
+  return parseNdJsonStream<T>(createReadStream(filename), options);
 };
