@@ -15,7 +15,8 @@
     "lint": "eslint ./src/ --fix",
     "prepare": "husky install",
     "semantic-release": "semantic-release",
-    "type-check": "tsc --noEmit"
+    "type-check": "tsc --noEmit",
+    "test": "env TS_NODE_COMPILER_OPTIONS='{\"module\": \"commonjs\" }' mocha -r ts-node/register 'tests/**/*.ts'"
   },
   "main": "./lib/src/index.js",
   "files": [
@@ -53,9 +54,12 @@
   },
   "homepage": "https://github.com/distinction-dev/ndjson-helpers#readme",
   "devDependencies": {
+    "@types/chai": "^4.3.3",
+    "@types/mocha": "^10.0.0",
     "@types/node": "^12.20.11",
     "@typescript-eslint/eslint-plugin": "^4.22.0",
     "@typescript-eslint/parser": "^4.22.0",
+    "chai": "^4.3.6",
     "codecov": "^3.8.3",
     "commitizen": "^4.2.4",
     "cz-conventional-changelog": "^3.3.0",
@@ -65,9 +69,10 @@
     "eslint-plugin-prettier": "^3.4.0",
     "husky": "^6.0.0",
     "lint-staged": "^10.5.4",
+    "mocha": "^10.1.0",
     "prettier": "^2.2.1",
     "semantic-release": "^19.0.2",
-    "ts-node": "^10.2.1",
+    "ts-node": "^10.9.1",
     "typescript": "^4.9.0-dev.20220916"
   },
   "config": {
